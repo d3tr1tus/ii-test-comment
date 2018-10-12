@@ -1,0 +1,42 @@
+{block content}
+<a n:href="addComment">Přidat poznámku</a>
+<h1>Z MySQL</h1>
+<table>
+    <thead>
+    <th>Název</th>
+    <th>Poznámka</th>
+    </thead>
+    <tbody>
+    <tr n:foreach="$commentsMysql as $comment">
+        <td>{$comment->name}</td>
+        <td>
+        {*}
+            Koukal jsem, že například u Texy se přidá jen filtr.
+            Podle toho, jestli by měla poznámka Texy nebo Markdown bych ještě přidal správný filtr.
+        {*}
+            {$comment->comment}
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h1>Ze souborů</h1>
+
+<table>
+    <thead>
+    <th>Název</th>
+    <th>Poznámka</th>
+    </thead>
+    <tbody>
+    <tr n:foreach="$commentsFiles as $key => $value">
+        <td>{$key}</td>
+        <td>
+            {*}
+                Koukal jsem, že například u Texy se přidá jen filtr.
+                Podle toho, jestli by měla poznámka Texy nebo Markdown bych ještě přidal správný filtr.
+            {*}
+            {$value}
+        </td>
+    </tr>
+    </tbody>
+</table>
